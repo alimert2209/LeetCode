@@ -1,3 +1,4 @@
+import math
 class Solution:
     def subtractProductAndSum(self, n: int) -> int:
         my_list = [int(x) for x in str(n)]
