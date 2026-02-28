@@ -1,10 +1,23 @@
 import java.util.Arrays;
+import java.util.TreeSet;
 
 public class Easy_26 {
 
     public int removeDuplicates(int[] nums) {
         // TODO
-        return 0;
+        TreeSet<Integer> uniqueSet = new TreeSet<Integer>();
+        for (int num : nums) {
+            uniqueSet.add(num);
+        }
+
+        int numberOfUniqueElements = uniqueSet.size();
+
+        for (int i = 0; i < numberOfUniqueElements; i++) {
+            nums[i] = uniqueSet.getFirst();
+            uniqueSet.remove(uniqueSet.getFirst());
+        }
+        
+        return numberOfUniqueElements;
     }
 
     // ---------------- TEST RUNNER ----------------
