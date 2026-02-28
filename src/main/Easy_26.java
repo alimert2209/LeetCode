@@ -5,7 +5,19 @@ public class Easy_26 {
 
     public int removeDuplicates(int[] nums) {
         // TODO
-        TreeSet<Integer> uniqueSet = new TreeSet<Integer>();
+        if (nums.length == 0) return 0;
+
+        int write = 1;
+
+        for (int read = 1; read < nums.length; read++) {
+            if (nums[read] != nums[read - 1]){
+                nums[write++] = nums[read];
+            }
+        }
+
+        return write;
+
+/*        TreeSet<Integer> uniqueSet = new TreeSet<Integer>();
         for (int num : nums) {
             uniqueSet.add(num);
         }
@@ -17,7 +29,7 @@ public class Easy_26 {
             uniqueSet.remove(uniqueSet.getFirst());
         }
         
-        return numberOfUniqueElements;
+        return numberOfUniqueElements;*/
     }
 
     // ---------------- TEST RUNNER ----------------
